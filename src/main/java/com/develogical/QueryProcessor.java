@@ -29,6 +29,11 @@ public class QueryProcessor {
         if (question.contains("largest")) {
             return String.valueOf(largestNumber(extractNumbersFromString(question)));
         }
+
+        if(question.contains("which city is the eiffel tower in")){
+            return "Paris";
+        }
+
         return "";
     }
 
@@ -70,6 +75,8 @@ public class QueryProcessor {
         }
         return total;
     }
+
+
 
 
 }

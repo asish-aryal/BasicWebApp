@@ -48,4 +48,9 @@ public class QueryProcessorTest {
     public void multipliesNumbers() {
         assertThat(queryProcessor.process("what is 23 multiplied by 67"), containsString("1541"));
     }
+
+    @Test
+    public void eiffelTowerTest(){
+        assertThat(queryProcessor.process("which city is the Eiffel tower in"), containsString("Paris"));
+    }
 }
