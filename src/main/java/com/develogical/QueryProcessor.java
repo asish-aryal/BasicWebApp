@@ -34,6 +34,10 @@ public class QueryProcessor {
             return "Paris";
         }
 
+        if(question.contains("which of the following numbers are primes")){
+            return String.valueOf(findPrime(extractNumbersFromString(question)));
+        }
+
         return "";
     }
 
@@ -56,6 +60,36 @@ public class QueryProcessor {
         }
         return total;
     }
+
+    private int findPrime(ArrayList<Integer> numberList){
+        for(int number: numberList){
+            if(isPrime(number)){
+                return number;
+            }
+        }
+        return 0;
+    }
+
+    public boolean isPrime(int possiblePrime){
+        if (possiblePrime < 1)
+            return false;
+        else if (possiblePrime == 2)
+            return true;
+        else {
+            for(int i = 2; i < (possiblePrime/2 - 1); i++){
+                if(possiblePrime % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+
+
+
+
+
 
 
     private int timesNumbers(ArrayList<Integer> numberList) {

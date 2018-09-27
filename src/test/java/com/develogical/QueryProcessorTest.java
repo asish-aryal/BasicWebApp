@@ -53,4 +53,18 @@ public class QueryProcessorTest {
     public void eiffelTowerTest(){
         assertThat(queryProcessor.process("which city is the Eiffel tower in"), containsString("Paris"));
     }
+
+    @Test
+    public void returnsPrimeNumber(){
+        assertThat(queryProcessor.process("which of the following numbers are primes: 4, 8, 12, 22, 19"), containsString("19"));
+    }
+
+    @Test
+    public void checkForPrime(){
+        assertThat(queryProcessor.isPrime(5), is(true));
+        assertThat(queryProcessor.isPrime(19), is(true));
+        assertThat(queryProcessor.isPrime(23), is(true));
+        assertThat(queryProcessor.isPrime(8), is(false));
+    }
+
 }
