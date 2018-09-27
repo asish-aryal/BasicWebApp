@@ -5,6 +5,6 @@ script: mvn clean verify
 deploy:
   provider: heroku
   api_key:
-    secure: MZFLVwl79elPndqF4aqbxw
+    secure: 0927b666-62d0-42df-9b64-f5ed236da8c7
   on:
     branch: master
