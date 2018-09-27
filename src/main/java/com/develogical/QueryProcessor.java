@@ -26,6 +26,21 @@ public class QueryProcessor {
 
             return String.valueOf(accumulator);
         }
+
+
+        if (question.contains("what is") && question.contains("multiplied")) {
+            Pattern numberCatcher = Pattern.compile("[0-9]+");
+            Matcher matcher = numberCatcher.matcher(question);
+            int accumulator = 1;
+
+            while(matcher.find()){
+                accumulator = accumulator * Integer.valueOf(matcher.group());
+            }
+
+            return String.valueOf(accumulator);
+        }
+
+
         if (question.contains("largest")) {
             Pattern numberCatcher = Pattern.compile("[0-9]+");
             Matcher matcher = numberCatcher.matcher(question);
