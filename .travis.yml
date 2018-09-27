@@ -4,6 +4,7 @@ jdk:
 script: mvn clean verify
 deploy:
   provider: heroku
+  app: cow-battery-35
   api_key:
     secure: 0927b666-62d0-42df-9b64-f5ed236da8c7
   on:
