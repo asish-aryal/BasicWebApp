@@ -19,13 +19,26 @@ public class QueryProcessor {
             Pattern numberCatcher = Pattern.compile("[0-9]+");
             Matcher matcher = numberCatcher.matcher(question);
             int accumulator = 0;
-            int index = 0;
+
             while(matcher.find()){
                 accumulator = accumulator + Integer.valueOf(matcher.group());
-                index++;
             }
 
             return String.valueOf(accumulator);
+        }
+        if (question.contains("largest")) {
+            Pattern numberCatcher = Pattern.compile("[0-9]+");
+            Matcher matcher = numberCatcher.matcher(question);
+            int maxHolder = 0;
+
+            while(matcher.find()){
+                int currentNumber = Integer.valueOf(matcher.group());
+                if (currentNumber > maxHolder){
+                    maxHolder = currentNumber;
+                }
+            }
+
+            return String.valueOf(maxHolder);
         }
         return "";
     }
