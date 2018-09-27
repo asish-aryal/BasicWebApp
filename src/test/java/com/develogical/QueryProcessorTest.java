@@ -29,4 +29,12 @@ public class QueryProcessorTest {
     public void returnsNameWhenAsked() {
         assertThat(queryProcessor.process("what is your name"), containsString("TDD Cow"));
     }
+
+    @Test
+    public void addsTwoNumbers() {
+        assertThat(queryProcessor.process("what is 20 plus 10"), containsString("30"));
+        assertThat(queryProcessor.process("what is 25 plus 15"), containsString("40"));
+        assertThat(queryProcessor.process("what is 2 plus 1"), containsString("3"));
+
+    }
 }
